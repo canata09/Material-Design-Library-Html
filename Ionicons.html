@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mağaza Görünümü</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        .product {
+            border: 1px solid #000;
+            margin: 10px auto; /* auto margin for horizontal centering */
+            padding: 10px;
+            width: 200px; /* specify a width */
+            margin: 10px auto; /* auto margin for horizontal centering */
+            display: block; /* block level element for centering */
+        }
+        .product ion-icon {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="products">
+        <!-- Ürünler burada olacak -->
+    </div>
+
+    <!--https://ionic.io/ionicons/usage
+    <ion-icon name="heart"></ion-icon>
+        https://ionic.io/ionicons/usage-->
+
+    <script>
+        var products = [
+            { name: 'Ürün 1', icon: 'heart' },
+            { name: 'Ürün 2', icon: 'logo-google-playstore' },
+            { name: 'Ürün 3', icon: 'logo-youtube' },
+            { name: 'Ürün 4', icon: 'logo-apple-appstore' },
+            { name: 'Ürün 5', icon: 'logo-whatsapp' },
+            { name: 'Ürün 6', icon: 'logo-facebook' },
+            { name: 'Ürün 7', icon: 'logo-google' },
+            // daha fazla ürün ekleyin
+        ];
+
+        var productsDiv = document.getElementById('products');
+
+        for (var i = 0; i < products.length; i++) {
+            var productDiv = document.createElement('div');
+            productDiv.className = 'product';
+
+            var productIcon = document.createElement('ion-icon');
+            productIcon.setAttribute('name', products[i].icon);
+
+            var productName = document.createTextNode(products[i].name);
+
+            productDiv.appendChild(productIcon);
+            productDiv.appendChild(productName);
+
+            productsDiv.appendChild(productDiv);
+        }
+    </script>
+</body>
+</html>

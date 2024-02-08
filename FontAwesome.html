@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mağaza Görünümü</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .product {
+            border: 1px solid #000;
+            margin: 10px auto; /* auto margin for horizontal centering */
+            display: block; /* block level element for centering */
+            padding: 10px;
+            width: 200px;
+        }
+        .product i {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="products">
+        <!-- Ürünler burada olacak -->
+    </div>
+
+    <script>
+        var products = [
+            { name: 'Ürün 1', icon: 'fas fa-tshirt' },
+            { name: 'Ürün 2', icon: 'fas fa-shoe-prints' },
+            // daha fazla ürün ekleyin
+        ];
+
+        var productsDiv = document.getElementById('products');
+
+        for (var i = 0; i < products.length; i++) {
+            var productDiv = document.createElement('div');
+            productDiv.className = 'product';
+
+            var productIcon = document.createElement('i');
+            productIcon.className = products[i].icon;
+
+            var productName = document.createTextNode(products[i].name);
+
+            productDiv.appendChild(productIcon);
+            productDiv.appendChild(productName);
+
+            productsDiv.appendChild(productDiv);
+        }
+    </script>
+</body>
+</html>
